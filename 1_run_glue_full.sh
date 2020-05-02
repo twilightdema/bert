@@ -29,11 +29,11 @@ function run_task() {
       --bert_config_file="${BERT_CONFIG_FILE}"
 }
 
-run_task SST-2 1256 1e-5 20935 2093 32
+#run_task SST-2 1256 1e-5 20935 2093 32
 run_task MNLI 1000 3e-5 10000 1000 128
 run_task CoLA 320 1e-5 5336 533 16
-run_task QNLI 1986 1e-5 33112 3311 32
-run_task QQP 1000 5e-5 14000 1400 128
-run_task RTE 200 3e-5 800 80 32
-run_task STS-B 214 2e-5 3598 359 16
+#run_task QNLI 1986 1e-5 33112 3311 32
+#run_task QQP 1000 5e-5 14000 1400 128
+#run_task RTE 200 3e-5 800 80 32
+#run_task STS-B 214 2e-5 3598 359 16
 run_task MRPC 200 2e-5 800 80 32
