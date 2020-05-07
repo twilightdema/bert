@@ -908,10 +908,11 @@ def main(_):
           str(class_probability)
           for class_probability in probabilities) + "\n"
 
-      if task_name != "sts-b":
-        actual_label = label_list[int(prediction["predictions"])]
-      else:
-        actual_label = str(prediction["predictions"])
+      #if task_name != "sts-b":
+      #  actual_label = label_list[int(prediction["predictions"])]
+      #else:
+      actual_label = str(prediction["probabilities"])
+      
       sub_writer.write(example.guid + "\t" + str(example.text_a) + "\t" + str(example.text_b) + "\t" + str(actual_label) + "\t" + str(example.label) + "\n")
       num_written_lines += 1
   assert num_written_lines == num_actual_eval_examples
