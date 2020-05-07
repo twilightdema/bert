@@ -884,10 +884,10 @@ def main(_):
       step_str = file_name[len("model.ckpt-"):]
       step_num = int(step_str.split(".")[0])
       if step_num > checkpoint_step:
-        checkpoint_path = os.path.join(FLAGS.output_dir, file_name)
+        checkpoint_path = os.path.join(FLAGS.output_dir, 'model.ckpt-' + str(step_num))
         checkpoint_step = step_num
   print('[INFO]: Using checkpoint from: ' + checkpoint_path)
-  
+
   result = estimator.predict(input_fn=error_analysis_input_fn,
                              checkpoint_path=checkpoint_path
                             )
